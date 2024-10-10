@@ -1,13 +1,17 @@
 from rest_framework import serializers
 from apps.events.models import EventImage, Event, Category
 
-
 class EventImageSerializers(serializers.ModelSerializer):
     class Meta:
-        model=EventImage
-        fields = ['__all__']
+        model = EventImage
+        fields = '__all__'
 
 class CategorySerializers(serializers.ModelSerializer):
     class Meta:
-        model=Category
-        field = 'name'
+        model = Category
+        fields = ['name', 'slug']
+
+class EventSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Event
+        fields = '__all__'
