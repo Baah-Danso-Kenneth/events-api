@@ -20,7 +20,7 @@ class User(AbstractUser, PermissionsMixin):
     updated = models.DateTimeField(auto_now_add=True)
 
     USERNAME_FIELD = "username"
-    REQUIRED_FIELDS = ["email"]
+    REQUIRED_FIELDS = ["email", "first_name", "last_name"]
 
     objects = CustomUserManager()
 
