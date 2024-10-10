@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-from email.policy import default
-from pathlib import Path
-import os
-from dotenv import load_dotenv
-
-from django.conf.global_settings import MEDIA_URL, MEDIA_ROOT, AUTH_USER_MODEL
-=======
-
 import os.path
 from pathlib import Path
 from dotenv import  load_dotenv
@@ -19,33 +10,11 @@ ENV = os.environ.get("ENV")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
->>>>>>> e027666 (Prep project with new apps)
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-load_dotenv()
-
-<<<<<<< HEAD
-ENV = os.environ.get("ENV")
-
-SECRET_KEY = os.environ.get("SECRET_KEY", default="django-insecure-aminqra+yiq%c-3wutdn4h02b59q3@=vl-ck!!xbo)ntx($wkw")
-
-=======
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
->>>>>>> e027666 (Prep project with new apps)
 DEBUG = False if ENV == "PROD" else True
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
-
-<<<<<<< HEAD
-=======
-
-# Application definition
-
->>>>>>> e027666 (Prep project with new apps)
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,20 +24,8 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-<<<<<<< HEAD
-THIRD_PARTY_APPS = [
-  'rest_framework'
-]
 
-LOCAL_APPS = [
-  'core.events',
-  'core.profiles',
-  'core.users',
-]
 
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
-
-=======
 LOCAL_APPS = [
     "apps.events",
     "apps.users"
@@ -79,7 +36,7 @@ THIRD_PARTY_APPS = [
 ]
 
 INSTALLED_APPS = LOCAL_APPS + THIRD_PARTY_APPS + DJANGO_APPS
->>>>>>> e027666 (Prep project with new apps)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -169,8 +126,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
+
 AUTH_USER_MODEL = "users.User"
-=======
-AUTH_USER_MODEL = "users.User"
->>>>>>> e027666 (Prep project with new apps)
+
